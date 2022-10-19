@@ -131,11 +131,43 @@ let pi = 3.14
 const areaCircle = pi *radius * radius
 console.log(areaCircle)
 
-//Calculate the slope, x-intercept and y-intercept of y = 2x -2
+//Calculate the slope, x-intercept and y-intercept of y = 2x -2 */
+let slopefunc = (y, m, c) => {
+let slope = m
+let yIntercept = c/y
+let xIntercept = -c/m
 
-// Slope is m = (y2-y1)/(x2-x1). Find the slope between point (2, 2) and point(6,10)
+    return{
+        'slope':slope,
+        'yIntercept': yIntercept,
+        'xIntercept': xIntercept,
+        'result': `The slope of the line is ${slope} with y intercept at ${yIntercept} and x intercept at ${xIntercept}`
+    }
 
-// Compare the slope of above two questions.
+}
+slopefunc(1,2,-2)
+let slopeOne = slopefunc(1,2,-2).slope
+
+// //Slope is m = (y2-y1)/(x2-x1). Find the slope between point (2, 2) and point(6,10)
+let x1 = 2
+let y1 = 2
+let x2 = 6
+let y2 = 10
+const m = (y2 - y1) / (x2 - x1)
+console.log(m)
+
+// //Compare the slope of above two questions.
+let compareSlopes = (x, y) => {
+if (Math.abs(x) < Math.abs(y)){
+    return 'the second line is steeper than the first'
+}else if (Math.abs(x) > Math.abs(y)){
+    return 'the first line is steeper than the second'
+}else{
+    return 'both lines are of the same slope'
+}
+
+}
+console.log(compareSlopes(slopeOne, m))
 
 // Calculate the value of y (y = x2 + 6x + 9). Try to use different x values and figure out at what x value y is 0.
 
