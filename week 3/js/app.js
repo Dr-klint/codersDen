@@ -200,8 +200,8 @@ userAge >= 18
 //Write a script that prompt the user to enter number of years. Calculate the number of seconds a person can live. Assume some one lives just hundred years
 let userYear = +prompt('enter year')
 userYear <= 100
-  ? `You are ${userYear}. You have ${(100 - userYear) * 24 *60*60} seconds to live`
-  : `You are ${userYear}. YYou should be dead`;
+  ? `You are ${userYear}. You have ${(100 - userYear) * 365 * 24 *60*60} seconds to live`
+  : `You are ${userYear}. You should be dead`;
 
 let date = now.getDate();
 let month = now.getMonth() + 1;
