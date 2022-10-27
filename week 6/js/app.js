@@ -332,7 +332,7 @@ console.log(filterCountries)
 //Extract all the countries containing two or more words from the countries array and print it as array
 const twoWords = [];
 for (let country of countries) {
-  if (country.includes(" ")) {
+  if (country.length > 2) {
     twoWords.push(country);
   }
 }
