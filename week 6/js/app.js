@@ -183,13 +183,12 @@ const countries = [
   "Kenya",
 ];
 
-
 //Using the above countries array, create the following new array.
-const newCountries = []
+const newCountries = [];
 for (let i = 0; i < countries.length; i++) {
   newCountries.push(countries[i]);
 }
-console.log(newCountries)
+console.log(newCountries);
 
 //Using the above countries array, create an array for countries length'.
 const countriesLength = [];
@@ -210,13 +209,13 @@ for (let i = 0; i < countries.length; i++) {
 console.log(countriesModify);
 
 //In above countries array, check if there is a country or countries containing the word 'land'. If there are countries containing 'land', print it as array. If there is no country containing the word 'land', print 'All these countries are without land'.
-const countriesLand = []
-for(let i =0; i<countries.length; i++){
-    countries[i].includes("land")
-      ? countriesLand.push(countries[i])
-      : "All these countries are without land";
+const countriesLand = [];
+for (let i = 0; i < countries.length; i++) {
+  countries[i].includes("land")
+    ? countriesLand.push(countries[i])
+    : "All these countries are without land";
 }
-console.log(countriesLand)
+console.log(countriesLand);
 
 //In above countries array, check if there is a country or countries end with a substring 'ia'. If there are countries end with, print it as array. If there is no country containing the word 'ai', print 'These are countries ends without ia'.
 const countriesAI = [];
@@ -228,17 +227,17 @@ for (let i = 0; i < countries.length; i++) {
 console.log(countriesAI);
 
 //Using the above countries array, find the country containing the biggest number of characters.
-let countryCharacter = ''
+let countryCharacter = "";
 for (let i = 0; i < countries.length; i++) {
-countryCharacter.length > countries[i].length
-  ? countryCharacter
-  : (countryCharacter = countries[i]);
+  countryCharacter.length > countries[i].length
+    ? countryCharacter
+    : (countryCharacter = countries[i]);
 }
-console.log(countryCharacter)
+console.log(countryCharacter);
 
 //Using the above countries array, find the country containing only 5 characters.
-const countriesFive = countries.filter(country => country.length === 5)
-console.log(countriesFive)
+const countriesFive = countries.filter((country) => country.length === 5);
+console.log(countriesFive);
 
 const webTechs = [
   "HTML",
@@ -260,34 +259,88 @@ for (let i = 0; i < webTechs.length; i++) {
 console.log(webTechCharacter);
 
 // Use the webTechs array to create the following array of arrays:
-for(let [i,web] of webTechs.entries()){
-    console.log([web , i])
+for (let [i, web] of webTechs.entries()) {
+  console.log([web, i]);
 }
 
 const mernStack = ["MongoDB", "Express", "React", "Node"];
 //An application created using MongoDB, Express, React and Node is called a MERN stack app. Create the acronym MERN by using the array mernStack
-let acronymn = ''
-for(men of mernStack){
-    acronymn += men[0]
+let acronymn = "";
+for (men of mernStack) {
+  acronymn += men[0];
 }
-console.log(acronymn)
+console.log(acronymn);
 
 //Iterate through the array, ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"] using a for loop or for of loop and print out the items.
-for(let web of webTechs){
-    console.log(web)
+for (let web of webTechs) {
+  console.log(web);
 }
 
 //This is a fruit array , ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop without using a reverse method.
-const fruits = ["banana", "orange", "mango", "lemon"].reverse()
-console.log(fruits)
+const fruits = ["banana", "orange", "mango", "lemon"].reverse();
+console.log(fruits);
 
 //Print all the elements of array as shown below.
- const fullStack = [
-   ["HTML", "CSS", "JS", "React"],
-   ["Node", "Express", "MongoDB"],
- ].flat()
- for(let code of fullStack){
-    console.log(code)
- }
+const fullStack = [
+  ["HTML", "CSS", "JS", "React"],
+  ["Node", "Express", "MongoDB"],
+].flat();
+for (let code of fullStack) {
+  console.log(code);
+}
 
- /****************************EXERCISE 3*********************************/
+/****************************EXERCISE 3*********************************/
+//Copy countries array(Avoid mutation)
+const newCountriesArray = countries.slice();
+console.log(newCountriesArray);
+
+//Arrays are mutable. Create a copy of array which does not modify the original. Sort the copied array and store in a variable sortedCountries
+const sortedCountries = newCountriesArray.sort();
+console.log(sortedCountries);
+
+//Sort the webTechs array and mernStack array
+const sortWebTech = webTechs.sort();
+console.log(sortWebTech);
+
+const sortMernStack = mernStack.sort();
+console.log(sortMernStack);
+
+//Extract all the countries contain the word 'land' from the countries array and print it as array
+const countryLand = countries.filter((country) => country.includes("land"));
+console.log(countryLand);
+
+//Find the country containing the hightest number of characters in the countries array
+const countryCharacterArr = countries.reduce(
+  (acc, cur) => (cur.length > acc.length ? (acc = cur) : acc),
+  ""
+);
+console.log(countryCharacterArr);
+
+//Extract all the countries contain the word 'land' from the countries array and print it as array
+const countriesLandArr = [];
+for (let i = 0; i < countries.length; i++) {
+  countries[i].includes("land")
+    ? countriesLandArr.push(countries[i])
+    : "All these countries are without land";
+}
+console.log(countriesLandArr);
+
+//Extract all the countries containing only four characters from the countries array and print it as array
+const filterCountries = countries.filter(country => country.length === 4 )
+console.log(filterCountries)
+
+//Extract all the countries containing two or more words from the countries array and print it as array
+const twoWords = [];
+for (let country of countries) {
+  if (country.includes(" ")) {
+    twoWords.push(country);
+  }
+}
+console.log(twoWords);
+
+//Reverse the countries array and capitalize each country and stored it as an array
+const reverseCountry = []
+for (let each of countries.reverse()) {
+    reverseCountry.push(each.toUpperCase());
+}
+console.log(reverseCountry)
