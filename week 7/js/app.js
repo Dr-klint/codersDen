@@ -237,7 +237,57 @@ The number of evens are ${even}.`;
 console.log(evensAndOdds(100));
 
 //Write a function which takes any number of arguments and return the sum of the arguments
+const numArguments = function (...arr) {
+  let sum = 0;
+  for (let i = 0; i <= arr.length; i++) {
+    sum += i;
+  }
+  return sum;
+};
+console.log(numArguments(3, 4, 5, 6, 7, 4, 2, 5));
 
+//Writ a function which generates a randomUserIp.
+let randomUserIp = () => {
+  let userIp =
+    Math.floor(Math.random() * 256) +
+    "." +
+    Math.floor(Math.random() * 256) +
+    "." +
+    Math.floor(Math.random() * 256) +
+    "." +
+    Math.floor(Math.random() * 256);
+  return userIp;
+};
+console.log(randomUserIp());
 
+//Write a function which generates a randomMacAddress
+let address = [];
+const randomMacAddress = () => {
+  for (let r = 0; r <= 5; r++) {
+    address.push(
+      Math.floor(Math.random() * 1000)
+        .toString(16)
+        .slice(-2)
+        .toUpperCase()
+        .padStart(2, "0")
+    );
+  }
+  return address.join(":");
+};
+console.log(randomMacAddress());
 
+//Declare a function name randomHexaNumberGenerator. When this function is called it generates a random hexadecimal number. The function return the hexadecimal number.
+const randomHexaNumberGenerator = function () {
+  return `#${Math.floor(Math.random() * 1000000)
+    .toString(16)
+    .padEnd(6, "0")}`;
+};
+console.log(randomHexaNumberGenerator());
 
+//Declare a function name userIdGenerator. When this function is called it generates seven character id. The function return the id.// 41XTDbE
+const userIdGenerator = () => {
+  return `${Math.floor(Math.random() * 1000000).toString(16).toUpperCase().padEnd(7, '0')}`;
+}
+console.log(userIdGenerator());
+
+/****************************EXERCISE 3*********************************/
